@@ -1,0 +1,20 @@
+arr = [1,2,3,4,5,6,7,8,9]
+
+desired = -1
+
+def binary_search(arr, low=0, high = len(arr)-1):
+    if high<low:
+        return -1
+    mid = low + (high-low)//2
+    if arr[mid] == desired:
+        print("found desired number")
+        return
+    if high == low:
+        return -1
+    if arr[mid] < desired:
+        return binary_search(arr, mid+1, high)
+    else:
+        return binary_search(arr, low, mid-1)
+    
+    
+binary_search(arr, low=0, high = len(arr)-1)
